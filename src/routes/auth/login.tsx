@@ -1,0 +1,22 @@
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { AuthForm } from '@/features/auth/auth-form';
+import { parseAuthSearch, redirectIfAuthenticated } from '@/features/auth/guard';
+
+export const Route = createFileRoute('/auth/login')({
+  validateSearch: parseAuthSearch,
+  beforeLoad: redirectIfAuthenticated,
+  component: LoginPage,
+});
+
+function LoginPage() {
+  const { redirect } = Route.useSearch();
+  return (
+    <main className="mx-auto grid max-w-md gap-4 p-4 sm:p-8">
+      <h1>Entrar</h1>
+      <AuthForm mode="login" redirect={redirect} />
+      <Link to="/auth/register" search={{ redirect }}>
+        Criar conta
+      </Link>
+    </main>
+  );
+}

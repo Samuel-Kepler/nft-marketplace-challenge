@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+/* Identidade visual (tokens). Contraste mínimo AA: texto >= 4.5:1, componentes >= 3:1. */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --color-background: #ffffff;
+  --color-surface: #f6f5fb;
+  --color-foreground: #17142b;
+  --color-muted: #55526b;
+  --color-border: #d9d6e8;
+  --color-input: #7c7893;
+  --color-primary: #5b3fd6;
+  --color-primary-hover: #4a30b8;
+  --color-primary-foreground: #ffffff;
+  --color-danger: #b3261e;
+  --color-danger-surface: #fdecea;
+  --color-success: #1b6e3c;
+  --color-success-surface: #e8f5ec;
+  --color-warning: #8a5300;
+  --color-warning-surface: #fff4e0;
+  --color-ring: #2b1fa8;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+
+  --animate-shimmer: shimmer 1.6s linear infinite;
+  @keyframes shimmer {
+    to {
+      background-position: -200% 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 1rem;
+  }
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+  h1 {
+    margin-block: 0 1rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    margin-block: 0 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.25rem;
+    }
+  }
+  /* O foco programático no <main> (troca de rota) não é um alvo interativo: sem anel. */
+  main:focus {
+    outline: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  a {
+    color: var(--color-primary);
+    text-underline-offset: 3px;
+  }
+  a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  /* Foco visível e consistente em todo elemento interativo (WCAG 2.4.7 / 1.4.11). */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  /* Controles de formulário nativos com a identidade do projeto (alvo >= 44px). */
+  :where(input:not([type="checkbox"], [type="radio"], [type="file"]), select, textarea) {
+    min-height: 2.75rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-input);
+    border-radius: var(--radius-md);
+    background: var(--color-background);
+    color: inherit;
+    font: inherit;
+  }
+  :where(input[type="checkbox"], input[type="radio"]) {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--color-primary);
+    flex-shrink: 0;
+  }
+  :where(input[type="file"]) {
+    display: block;
+    max-width: 100%;
+    margin-top: 0.25rem;
+  }
+  :where(input, select)[aria-invalid="true"] {
+    border-color: var(--color-danger);
+    border-width: 2px;
+  }
+  :where(label) {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  :where(label:has(> input[type="radio"], > input[type="checkbox"])) {
+    display: flex;
+    margin-bottom: 0;
+  }
+  :where(fieldset) {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  :where(legend) {
+    margin-bottom: 0.25rem;
+    padding: 0;
+    font-weight: 600;
+  }
+  :where(form) {
+    display: grid;
+    gap: 1rem;
+    max-width: 28rem;
+  }
+  :where(form.flex) {
+    display: flex;
+    max-width: none;
+  }
+
+  /* Botão nativo sem classe própria: ação secundária acessível (alvo >= 44px). */
+  :where(button:not([class*="rounded"])) {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-input);
+    border-radius: var(--radius-md);
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  :where(button:not([class*="rounded"]):hover:not(:disabled)) {
+    background: var(--color-surface);
+  }
+  :where(button[type="submit"]:not([class*="rounded"])) {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+  :where(button[type="submit"]:not([class*="rounded"]):hover:not(:disabled)) {
+    background: var(--color-primary-hover);
+  }
+  :where(button:disabled) {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  /* Alertas inline: o prefixo textual evita depender só de cor. */
+  [role="alert"] {
+    padding: 0.5rem 0.75rem;
+    border-left: 4px solid var(--color-danger);
+    border-radius: var(--radius-sm);
+    background: var(--color-danger-surface);
+    color: var(--color-danger);
+    font-size: 0.9375rem;
+  }
+  [role="alert"]::before {
+    content: "Erro: ";
+    font-weight: 700;
+  }
+  [role="alert"] > p::before {
+    content: none;
+  }
+  [role="alert"] > button {
+    margin-top: 0.5rem;
+    color: var(--color-foreground);
+  }
+}
+
+/* Skeleton com shimmer; as dimensões são reservadas por quem usa (sem layout shift). */
+@layer components {
+  .skeleton {
+    background-color: #e6e3f2;
+    background-image: linear-gradient(90deg, #e6e3f2 25%, #f4f2fb 50%, #e6e3f2 75%);
+    background-size: 200% 100%;
+    animation: var(--animate-shimmer);
+    border-radius: var(--radius-sm);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton {
+      animation: none;
+      background-image: none;
+    }
+  }
+}
+
+/* Movimento reduzido: sem animações/transições nem rolagem suave em toda a aplicação. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* "Pular para o conteúdo": visível somente ao receber foco. */
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-foreground);
+  color: #fff;
+  font-weight: 600;
+}
+.skip-link:focus {
+  top: 0.5rem;
+  color: #fff;
+}

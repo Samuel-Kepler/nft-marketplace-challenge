@@ -1,0 +1,15 @@
+node_modules
+dist
+.env.local
+playwright-report
+test-results
+.lighthouseci
+
+.env
+.env.local
+agent_workspace/temp_prompt*
+
+
+logs/
+*.log
+

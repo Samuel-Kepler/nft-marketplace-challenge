@@ -1,0 +1,26 @@
+{
+  "aderente_ao_escopo": {
+    "type": "noul",
+    "noul": 0.52
+  },
+  "maturidade_arquitetural": {
+    "type": "choice",
+    "choice": "adequada",
+    "confidence": 0.67,
+    "probabilities": {
+      "excelente": 0.15,
+      "adequada": 0.78,
+      "inadequada": 0.07
+    }
+  },
+  "caminho_escolhido": {
+    "type": "choice",
+    "choice": "implementar_revisao_claude",
+    "confidence": 0.37,
+    "probabilities": {
+      "implementar_revisao_claude": 0.58,
+      "implementar_proposta_gemini": 0.0,
+      "refazer_pesquisa": 0.42
+    }
+  }
+}

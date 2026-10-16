@@ -1,0 +1,74 @@
+[
+  {
+    "url": "http://localhost:4173/",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\-2026_10_15_23_58_52.report.html",
+    "jsonPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\-2026_10_15_23_58_52.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.98,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:4173/",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\-2026_10_15_23_59_06.report.html",
+    "jsonPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\-2026_10_15_23_59_06.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.98,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:4173/nft/nft-001",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\nft_nft_001-2026_10_15_23_59_20.report.html",
+    "jsonPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\nft_nft_001-2026_10_15_23_59_20.report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.98,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:4173/nft/nft-001",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\nft_nft_001-2026_10_15_23_59_33.report.html",
+    "jsonPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\nft_nft_001-2026_10_15_23_59_33.report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.98,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:4173/",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\-2026_10_15_23_58_37.report.html",
+    "jsonPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\-2026_10_15_23_58_37.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.98,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:4173/nft/nft-001",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\nft_nft_001-2026_10_15_23_59_46.report.html",
+    "jsonPath": "C:\\Users\\plugify\\Documents\\docs\\lighthouse\\desktop\\nft_nft_001-2026_10_15_23_59_46.report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.98,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  }
+]
