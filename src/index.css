@@ -1,29 +1,44 @@
 @import "tailwindcss";
 
-/* Identidade visual (tokens). Contraste mínimo AA: texto >= 4.5:1, componentes >= 3:1. */
+/*
+ * Identidade visual (tokens). Fonte: Figma "Marketplace de NFTs" (variáveis color/* e font/family).
+ * Tema escuro; contraste mínimo AA: texto >= 4.5:1, componentes >= 3:1.
+ */
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Figma: font/family = Roboto Mono (sem webfont: usa a instalada, ou o monoespaçado do sistema). */
+  --font-sans: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 
-  --color-background: #ffffff;
-  --color-surface: #f6f5fb;
-  --color-foreground: #17142b;
-  --color-muted: #55526b;
-  --color-border: #d9d6e8;
-  --color-input: #7c7893;
-  --color-primary: #5b3fd6;
-  --color-primary-hover: #4a30b8;
-  --color-primary-foreground: #ffffff;
-  --color-danger: #b3261e;
-  --color-danger-surface: #fdecea;
-  --color-success: #1b6e3c;
-  --color-success-surface: #e8f5ec;
-  --color-warning: #8a5300;
-  --color-warning-surface: #fff4e0;
-  --color-ring: #2b1fa8;
+  /* Figma: color/ink, surface-card, surface-dark, background-elevated */
+  --color-background: #140d0a;
+  --color-surface: #241612;
+  --color-surface-dark: #38220f;
+  --color-elevated: #fbfbfb;
+  /* Figma: color/foreground, text-secondary, secondary */
+  --color-foreground: #f5f1eb;
+  --color-muted: #cfb28c;
+  --color-secondary: #b39463;
+  /* Figma: color/border, border-soft. O contorno de campos usa o secondary (>= 3:1 sobre o fundo). */
+  --color-border: #3f2319;
+  --color-border-soft: #55321f;
+  --color-input: #b39463;
+  /* Figma: color/primary e text-accent (hover/realce). Texto sobre o primário: color/ink. */
+  --color-primary: #d28a4c;
+  --color-primary-hover: #e89b55;
+  --color-primary-foreground: #140d0a;
+  --color-accent: #e89b55;
+  /* Feedback: fora do Figma; variantes escuras derivadas com contraste AA sobre a respectiva surface. */
+  --color-danger: #ff8f85;
+  --color-danger-surface: #3a1512;
+  --color-success: #7fdc9f;
+  --color-success-surface: #12281a;
+  --color-warning: #f2b45c;
+  --color-warning-surface: #33230a;
+  --color-ring: #e89b55;
 
   --radius-sm: 0.375rem;
   --radius-md: 0.625rem;
   --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 
   --animate-shimmer: shimmer 1.6s linear infinite;
   @keyframes shimmer {
@@ -62,7 +77,7 @@
   }
   @media (min-width: 768px) {
     h1 {
-      font-size: 2.25rem;
+      font-size: 2.6875rem; /* Figma: Display/43 Bold */
     }
   }
   /* O foco programático no <main> (troca de rota) não é um alvo interativo: sem anel. */
@@ -199,8 +214,8 @@
 /* Skeleton com shimmer; as dimensões são reservadas por quem usa (sem layout shift). */
 @layer components {
   .skeleton {
-    background-color: #e6e3f2;
-    background-image: linear-gradient(90deg, #e6e3f2 25%, #f4f2fb 50%, #e6e3f2 75%);
+    background-color: var(--color-surface);
+    background-image: linear-gradient(90deg, var(--color-surface) 25%, var(--color-surface-dark) 50%, var(--color-surface) 75%);
     background-size: 200% 100%;
     animation: var(--animate-shimmer);
     border-radius: var(--radius-sm);
@@ -234,10 +249,10 @@
   padding: 0.75rem 1rem;
   border-radius: var(--radius-md);
   background: var(--color-foreground);
-  color: #fff;
+  color: var(--color-background);
   font-weight: 600;
 }
 .skip-link:focus {
   top: 0.5rem;
-  color: #fff;
+  color: var(--color-background);
 }
