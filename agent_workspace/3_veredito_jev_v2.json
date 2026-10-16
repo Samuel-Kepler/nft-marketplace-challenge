@@ -1,0 +1,6 @@
+{
+  "score": 2.9,
+  "noul": 0.94,
+  "veredito": "implementar_refatoracao",
+  "justificativa": "A especificação v2 apresenta robustez de escopo (11.151 caracteres) e atende estritamente a todos os critérios de aceitação: integridade matemática ETH, suporte ao MCP do Figma, garantia contra regressões e conformidade estrita com zero bloatware."
+}
