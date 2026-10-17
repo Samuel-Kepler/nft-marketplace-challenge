@@ -39,7 +39,7 @@ export function NoticesRegion() {
               type="button"
               onClick={() => dismissNotice(notice.id)}
               aria-label="Dispensar aviso"
-              className="-m-1 inline-flex size-11 shrink-0 items-center justify-center rounded-md text-lg hover:bg-black/5"
+              className="-m-1 inline-flex size-11 shrink-0 items-center justify-center rounded-md text-lg hover:bg-foreground/10"
             >
               ×
             </button>
