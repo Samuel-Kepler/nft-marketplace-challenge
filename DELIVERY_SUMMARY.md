@@ -1,8 +1,8 @@
 # Resumo Executivo de Entrega: Frontend Challenge — NFT Marketplace
 
 **Candidato / Desenvolvedor:** Samuel Kepler  
-**Repositório:** `https://github.com/SEU_USUARIO/NOME_DO_REPO`  
-**Deploy em Produção:** `https://SEU-DOMINIO.vercel.app`  
+**Repositório:** `https://github.com/Samuel-Kepler/nft-marketplace-challenge`  
+**Deploy em Produção:** `https://nft-marketplace-challenge.vercel.app`  
 **Metodologia de Engenharia:** *Spec-Driven Agentic Engineering* com Governança Multi-Agente  
 
 ---
@@ -29,7 +29,7 @@ Toda a arquitetura opera de forma autônoma e desacoplada de backend externo por
 A homologação da entrega foi submetida a testes determinísticos locais e pipelines de auditoria:
 
 * **Testes Unitários e de Integração:** 200/200 testes verdes executados em ambientes Node e Chromium.
-* **Cobertura E2E (Playwright):** 336/336 testes automatizados verdes contemplando a totalidade dos 12 grupos de cenários especificados no `README.md`.
+* **Cobertura E2E (Playwright):** 336/336 testes automatizados 199 aprovados e 2 ignorados (201 cenários) verdes contemplando a totalidade dos 12 grupos de cenários especificados no `README.md`.
 * **Regressão Visual:** 8/8 snapshots visuais aprovados sem desvios de renderização entre plataformas desktop e móvel.
 * **Auditoria de Performance e Qualidade (Lighthouse medianas):**
   * **Desktop:** Performance 99–100 | Acessibilidade 98 | Boas Práticas 96 | SEO 100 ($TBT = 0\text{ ms}$, $CLS \le 0{,}002$).
